@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class LeadershipInformation extends Model
+{
+    protected $table = 'leadership_information';
+
+    protected $primaryKey = 'leadership_id';
+
+    protected $fillable = [
+        'student_id',
+        'leadership_type',
+        'organization_name',
+        'organization_role',
+        'term',
+        'issued_by',
+        'leadership_status',
+    ];
+
+    public function student()
+    {
+        return $this->belongsTo(StudentPersonalInformation::class, 'student_id', 'student_id');
+    }
+}
