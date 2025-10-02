@@ -34,10 +34,10 @@ return new class extends Migration {
 
             $table->index('student_id');
 
-            // Safe FK to existing academic_information (string PK)
+            // Safe FK to existing student_personal_information (string PK)
             $table->foreign('student_id')
                   ->references('student_id')
-                  ->on('academic_information')
+                  ->on('student_personal_information')
                   ->onDelete('cascade');
         });
     }

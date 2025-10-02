@@ -16,6 +16,7 @@ class FinalReview extends Model
         'remarks',
         'date_reviewed',
         'action',
+        'status',
     ];
 
     public function awardReports()

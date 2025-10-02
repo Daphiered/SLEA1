@@ -3,42 +3,33 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\RubricCategory;
+use Illuminate\Support\Facades\DB;
 
 class RubricCategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        $categories = [
-            [
-                'title' => 'Academic Performance',
-                'max_points' => 40.00,
-                'order_no' => 1,
-            ],
-            [
-                'title' => 'Leadership Skills',
-                'max_points' => 25.00,
-                'order_no' => 2,
-            ],
-            [
-                'title' => 'Community Service',
-                'max_points' => 20.00,
-                'order_no' => 3,
-            ],
-            [
-                'title' => 'Research & Innovation',
-                'max_points' => 15.00,
-                'order_no' => 4,
-            ],
-        ];
+        DB::table('rubric_categories')->updateOrInsert(
+    ['order_no' => 1],
+    ['title' => 'Leadership Excellence', 'max_points' => 20.00]
+);
 
-        foreach ($categories as $category) {
-            RubricCategory::create($category);
-        }
+DB::table('rubric_categories')->updateOrInsert(
+    ['order_no' => 2],
+    ['title' => 'Academic Excellence', 'max_points' => 20.00]
+);
+
+DB::table('rubric_categories')->updateOrInsert(
+    ['order_no' => 3],
+    ['title' => 'Awards/Recognition Received', 'max_points' => 20.00]
+);
+
+DB::table('rubric_categories')->updateOrInsert(
+    ['order_no' => 4],
+    ['title' => 'Community Involvement & Good Conduct', 'max_points' => 20.00]
+);
+
+
+       
     }
 }
-
-

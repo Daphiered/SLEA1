@@ -8,7 +8,9 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('rubric_sections', function (Blueprint $table) {
-            $table->increments('section_id');                   // INTEGER (AI)
+            $table->string('section_id', 20)->primary();  
+           
+   // String primary key
             $table->unsignedInteger('category_id');             // FK -> rubric_categories.category_id
             $table->string('title', 255);
             $table->unsignedTinyInteger('order_no')->default(1);

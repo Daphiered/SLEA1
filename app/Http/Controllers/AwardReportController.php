@@ -21,11 +21,7 @@ class AwardReportController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['review_id'] = $data['final_review_id'] ?? null;
-        unset($data['final_review_id']);
-        
-        AwardReport::create($data);
+        AwardReport::create($request->all());
         return redirect()->route('award_reports.index');
     }
 

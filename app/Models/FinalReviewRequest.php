@@ -14,6 +14,9 @@ class FinalReviewRequest extends Model
     protected $fillable = [
         'submission_id',
         'action',
+        'request_date',
+        'status',
+        'remarks',
     ];
 
     // Relationship

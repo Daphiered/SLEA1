@@ -12,16 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('student_passwords', function (Blueprint $table) {
-            $table->id('password_id');
-            $table->string('student_id', 20);
-            $table->string('password_hashed', 255);
-            $table->timestamp('date_pass_created')->nullable();
-            $table->timestamps();
-
-            $table->foreign('student_id')
-                  ->references('student_id')
-                  ->on('student_personal_information')
-                  ->onDelete('cascade');
+            $table->increments('password_id'); // Custom auto-increment primary key
+            $table->string('email_address', 50); // You can make this a foreign key if needed
+            $table->string('password_hashed', 50);
+            $table->timestamps(); // created_at, updated_at
         });
     }
 

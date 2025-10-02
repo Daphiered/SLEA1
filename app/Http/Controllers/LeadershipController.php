@@ -33,7 +33,7 @@ class LeadershipController extends Controller
             'organization_name' => 'required|string|max:255',
             'organization_role' => 'required|string|max:255',
             'term' => 'required|string|max:255',
-            'hours_log' => 'required|string|max:255',
+            
             'leadership_status' => 'required|string|max:255',
         ]);
 
@@ -53,10 +53,10 @@ class LeadershipController extends Controller
     {
         $request->validate([
             'student_id' => 'required|string|max:20',
+            'leadership_type' => 'required|string|max:255',
             'organization_name' => 'required|string|max:255',
-            'organization_role' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
             'term' => 'required|string|max:255',
-            'hours_log' => 'required|string|max:255',
             'leadership_status' => 'required|string|max:255',
         ]);
 

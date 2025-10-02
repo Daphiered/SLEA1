@@ -12,10 +12,13 @@ return new class extends Migration
             $table->id('final_review_id'); // PK
             $table->unsignedBigInteger('submission_id'); // FK
             $table->string('action', 20)->nullable();
+            $table->dateTime('request_date');
+            $table->string('status', 20)->nullable();
+            $table->string('remarks', 255)->nullable();
             $table->timestamps();
 
             $table->foreign('submission_id')
-                  ->references('id')->on('submissions')
+                  ->references('submission_id')->on('submissions')
                   ->onDelete('cascade');
         });
     }

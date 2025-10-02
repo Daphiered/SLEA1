@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
+
         Schema::create('rubric_subsections', function (Blueprint $table) {
             $table->bigIncrements('sub_items');               // PK (AI)
             $table->unsignedInteger('section_id');            // FK -> rubric_sections.section_id
@@ -21,6 +22,8 @@ return new class extends Migration {
             $table->foreign('section_id')
                   ->references('section_id')->on('rubric_sections')
                   ->cascadeOnDelete();
+                  $table->unique(['section_id', 'order_no']);
+
         });
     }
 

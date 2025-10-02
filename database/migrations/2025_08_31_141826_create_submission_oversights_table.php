@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign key constraints
-            $table->foreign('pending_sub_id')->references('id')->on('pending_submissions')->onDelete('cascade');
+            $table->foreign('pending_sub_id')->references('pending_sub_id')->on('pending_submissions')->onDelete('cascade');
             $table->foreign('admin_id')->references('admin_id')->on('admins')->onDelete('cascade');
         });
     }

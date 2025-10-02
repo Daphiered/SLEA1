@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->string('remarks', 50);
             $table->dateTime('date_reviewed');
             $table->string('action', 20);
+            $table->string('status', 20);
             $table->timestamps();
         });
     }

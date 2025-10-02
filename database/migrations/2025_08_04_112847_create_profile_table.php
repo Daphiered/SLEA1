@@ -10,27 +10,24 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('profile', function (Blueprint $table) {
-            $table->id();
-            $table->string('profile_id', 20)->unique();
-            $table->string('student_id', 20);
-            $table->string('picture_path', 255)->nullable();
-            $table->timestamp('date_upload')->nullable();
-            $table->timestamps();
+{
+    Schema::create('profile', function (Blueprint $table) {
+        $table->string('profile_id', 20)->primary();
+        $table->string('student_id', 20);
 
-            $table->foreign('student_id')
-                  ->references('student_id')
-                  ->on('student_personal_information')
-                  ->onDelete('cascade');
-        });
-    }
+        $table->string('profile_picture_path', 255)->nullable();
+        $table->dateTime('date_upload_profile')->nullable();
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('profile');
-    }
+        $table->foreign('student_id')
+              ->references('student_id')
+              ->on('academic_information')
+              ->onDelete('cascade');
+    });
+}
+
+public function down(): void
+{
+    Schema::dropIfExists('profile');
+}
+
 };

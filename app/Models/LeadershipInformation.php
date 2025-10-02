@@ -10,9 +10,10 @@ class LeadershipInformation extends Model
 
     protected $primaryKey = 'leadership_id';
 
-    protected $fillable = [
+     protected $fillable = [
         'student_id',
-        'leadership_type',
+        'leadership_type_id',
+        'organization_id',
         'organization_name',
         'organization_role',
         'term',
@@ -23,5 +24,15 @@ class LeadershipInformation extends Model
     public function student()
     {
         return $this->belongsTo(StudentPersonalInformation::class, 'student_id', 'student_id');
+    }
+
+    public function leadershipType()
+    {
+        return $this->belongsTo(LeadershipType::class, 'leadership_type_id');
+    }
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class, 'organization_id');
     }
 }

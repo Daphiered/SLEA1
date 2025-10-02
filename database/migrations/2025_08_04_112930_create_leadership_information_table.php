@@ -9,10 +9,11 @@ return new class extends Migration {
         Schema::create('leadership_information', function (Blueprint $table) {
             $table->id('leadership_id');
             $table->string('student_id', 20);
+            $table->string('leadership_type', 255);
             $table->string('organization_name', 255);
-            $table->string('organization_role', 255);
+            $table->string('position', 255);
             $table->string('term', 255);
-            $table->string('hours_log', 255);
+            $table->string('issued_by', 255);
             $table->string('leadership_status', 255);
             $table->timestamps();
 

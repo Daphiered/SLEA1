@@ -168,3 +168,16 @@ Route::get('system-logs', [SystemMonitoringAndLogController::class, 'index'])->n
 
 // Optional sanity route to confirm routes file is loading:
 Route::get('/ping', fn () => 'pong');
+
+use App\Http\Controllers\OrganizationController;
+
+Route::resource('organizations', OrganizationController::class);
+
+
+
+
+
+
+
+
+

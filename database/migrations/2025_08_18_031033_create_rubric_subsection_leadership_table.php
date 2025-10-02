@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('rubric_subsection_leadership', function (Blueprint $table) {
-            $table->bigIncrements('sub_items');           // PK (AI)
+            $table->id(); // Auto-incrementing primary key
             $table->string('position', 255);
             $table->decimal('points', 4, 2);
             $table->unsignedTinyInteger('position_order')->default(1);
