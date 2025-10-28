@@ -57,6 +57,7 @@ class LeadershipController extends Controller
             'organization_name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'term' => 'required|string|max:255',
+            'issued_by' => 'required|string|max:255',
             'leadership_status' => 'required|string|max:255',
         ]);
 

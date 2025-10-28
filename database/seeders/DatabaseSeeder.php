@@ -2,27 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\RubricSection;   
+
 use Illuminate\Database\Seeder;
 use Database\Seeders\ClusterSeeder;
 use Database\Seeders\LeadershipTypeSeeder;
 use Database\Seeders\RubricCategorySeeder;
-use Database\Seeders\RubricSectionsSeeder;
-use Database\Seeders\RubricSubsectionsSeeder;
-use Database\Seeders\RubricSubsectionsLeadershipSeeder;
+use Database\Seeders\RubricSectionSeeder;
+use Database\Seeders\RubricSubsectionSeeder;
+use Database\Seeders\RubricSubsectionLeadershipSeeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call([
-            ClusterSeeder::class,
-            LeadershipTypeSeeder::class,
-            OrganizationSeeder::class,
-            RubricCategorySeeder::class,
-           RubricSectionsSeeder::class,
-            RubricSubsectionsSeeder::class,
-            RubricSubsectionsLeadershipSeeder::class,
-        ]);
+        // Add seeder calls here if needed
     }
 }
